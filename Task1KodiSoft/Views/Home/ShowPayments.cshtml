@@ -1,0 +1,82 @@
+﻿@using Task1KodiSoft.ViewModels
+@model PaymentViewModel
+
+<div class="row" id="header_slide3">
+    <h2>Payments</h2>
+</div>
+<div class="row special_row">
+    <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="header_content_slide3">
+            <div class="header_content_name"> Operations number</div>
+            <div class="header_content_value">
+                <div class="content_value">
+                    <span class="icon"><i class="far fa-credit-card"></i></span>
+                    <strong>@Model.OperationNumberCredit</strong>
+                </div>
+                <div class="content_value">
+                    <span class="icon">
+                        <img src="~/images/wallet-filled-money-tool.svg" />
+                    </span>
+                    <strong>@Model.OperationNumberCash</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12">
+
+        <div class="header_content_slide3">
+            <div class="header_content_name">Amount of money</div>
+            <div class="header_content_value">
+                <div class="content_value">
+                    <span class="icon"><i class="far fa-credit-card"></i></span>
+                    <strong>$@Model.AmountMoneyCredit.ToString("0.00")</strong>
+                </div>
+                <div class="content_value">
+                    <span class="icon">
+                        <img src="~/images/wallet-filled-money-tool.svg" />
+                    </span>
+                    <strong>$@Model.AmountMoneyCash.ToString("0.00")</strong>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="row special_row content_slide_3">
+    <div class="row col-lg-8 col-md-12 col-sm-12 statistic">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="payment_row">
+                <div class="header">
+                    Tips average
+                </div>
+                <div class="content">
+                    <i class="fas fa-tags"></i><strong>@Model.TipsAverage.ToString("0.00")%</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="payment_row">
+                <div class="header">
+                    Tips number
+                </div>
+                <div class="content">
+                    <strong>@Model.TipsNumber</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="payment_row">
+                <div class="header">
+                    Tips sum
+                </div>
+                <div class="content">
+                    <strong>$@Model.TipsSum.ToString(".00")</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

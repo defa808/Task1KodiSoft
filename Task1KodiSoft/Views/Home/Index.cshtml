@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Task1KodiSoft.ViewModels
+@model OrdersFieldsViewModel
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/slider.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="~/lib/font-awesome/svg-with-js/js/fontawesome-all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css" />
+<script src="~/js/jquery.unobtrusive-ajax.js"></script>
+
+
+<div id="slider">
+    <div class="slide_holder">
+        <div class="slide">
+            <h1><span><i class="fas fa-arrow-circle-left"></i></span> ANALYTICS</h1>
+
+            <div class="content_slide">
+                <div id="header_slide1">
+                    <h2>Orders</h2>
+                </div>
+                <div class="row special_row">
+                    <div class="col col-lg-3 col-md-12 col-sm-12">
+                        <div class="header_content_slide1">
+                            <div class="header_content_name"> Average check</div>
+                            <div class="header_content_value">
+                                <span class="icon"><i class="fas fa-tags"></i></span>
+                                <strong>$@Model.AverageCheck.ToString(".00")</strong>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-lg-4 col-md-12 col-sm-12">
+                        <div class="header_content_slide1">
+                            <div class="header_content_name">Amount money</div>
+                            <div class="header_content_value">
+                                <span class="icon">
+                                    <img src="~/images/wallet-filled-money-tool.svg" />
+                                </span>
+                                <strong> $@Model.AmountMoney.ToString(".00")</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-2 col-md-12 col-sm-12">
+                        <div class="header_content_slide1">
+                            <div class="header_content_name">Number of orders</div>
+                            <div class="header_content_value">
+                                <span class="icon">
+                                    <img src="~/images/list.svg" />
+                                </span>
+                                <strong>@Model.NumbersOrders</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-3 col-md-12 col-sm-12">
+                        <div class="header_content_slide1">
+                            <div class="header_content_name">Total ordered items</div>
+                            <div class="header_content_value">
+                                <span class="icon">
+                                    <img src="~/images/dish.svg" />
+                                </span>
+                                <strong>@Model.TotalOrderedItems</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row special_row">
+                    <div class="col">
+                        <div class="grafic">
+                            <div class="header">
+                                <div class="name_grafic"><h4>Orders diagramm</h4></div>
+                                <form id="formGrafic" asp-controller="Home" asp-action="ShowGrafic" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#grafic">
+                                    <div class="tools">
+                                        <div class="row form-group">
+                                            <label class="radio-inline"><input class="radioType" checked="checked" onclick="ShowGraficAjax()" type="radio" name="choosen_mode" value="Number" />Number of orders</label>
+                                            <label class="radio-inline"><input class="radioType" type="radio" onclick="ShowGraficAjax()" name="choosen_mode" value="Money" />Money</label>
+                                        </div>
+                                        <div class="row form-group">
+                                            @for (int i = 0; i < Enum.GetNames(typeof(DateEnum)).Length; i++)
+                                            {
+                                                <label class="radio-inline">
+                                                    <input class="radioType" type="radio" onclick="ShowGraficAjax()" name="choosen_date" checked="checked" value=@((DateEnum)i) />@((DateEnum)i)
+                                                </label>
+
+                                            }
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                            <div class="content" id="grafic">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="slide">
+            <div class="content_slide" id="content_slide2">
+            </div>
+
+        </div>
+        <div class="slide">
+            <div class="content_slide" id="content_slide3">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<form asp-controller="Account" asp-action="Logout" method="POST">
+    <button type="submit" class="btn_exit btn btn-danger btn-block">Exit</button>
+</form>
+<script src="~/js/ShowGraficAjax.js"></script>
+<script src="~/js/ShowFoodsAjax.js"></script>
+<script src="~/js/ShowPayment.js"></script>

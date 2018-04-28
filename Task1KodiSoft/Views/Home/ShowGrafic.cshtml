@@ -1,0 +1,19 @@
+﻿
+@using Task1KodiSoft.ViewModels
+@model GraficViewModel
+
+@for (int i = 0; i < @Model.FillPercentage.Count(); i++)
+{
+    <div class="column_graf">
+        <div class="filled" id="filled@i" style="height:@Model.FillPercentage[i]%">
+
+        </div>
+        <div class="value">
+            @Model.Values[i]
+        </div>
+        <div class="date">
+            @Model.DatePeriod[i]
+        </div>
+    </div>
+
+}

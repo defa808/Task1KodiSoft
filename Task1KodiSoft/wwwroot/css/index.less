@@ -1,0 +1,426 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 360px;
+    font-family: 'Roboto', sans-serif;
+    height: max-content;
+    padding: 0px;
+}
+
+@borderColumnGraf: 1px solid gray;
+@colorGrafBack: #f5f5f5;
+@columnGrafColor: #01d1ff;
+@headerSlide2Color: black;
+@itemBackgroundColor: #70bc00;
+@item2BackgroundColor: #f82838;
+@hedaerContentNameColor: #cdf000;
+
+.btn_exit{
+    position:fixed;
+    top:20px;
+    right:  60px;
+    width:100px;
+}
+#slider {
+    padding: 0px;
+    margin: 0px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.slide_holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    width: max-content;
+    padding: 10px;
+}
+
+.slide {
+    min-width: 80vw;
+    max-width: 100vw;
+    height: 100vh;
+    margin-right: 50px;
+    padding: 0px 60px 0px 60px;
+    display: inline-block;
+    padding-top: 68px;
+    overflow-y: hidden;
+
+    &:first-child {
+        padding-top: 0px;
+    }
+
+    h1 {
+        margin-left: -45px;
+    }
+
+    .fa-arrow-circle-left {
+        color: gray;
+    }
+
+    .content_slide {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+
+        #header_slide2 {
+            color: @headerSlide2Color;
+        }
+
+        .header_content_slide1 {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: #01acd2;
+            padding: 10px;
+            min-width: max-content;
+            max-height: 190px;
+            margin: 10px 0px;
+
+
+
+            .header_content_name {
+            }
+
+            .header_content_value {
+                height: 100%;
+                line-height: 1.6;
+                font-size: 40px;
+                text-align: right;
+            }
+
+            .icon {
+                display: inline-block;
+                font-size: 35px;
+                color: white;
+                width: 35px;
+                height: 35px;
+                padding-bottom: 1em;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+
+
+        .header_content_slide3 {
+            position: relative;
+            width: 100%;
+            height: max-content;
+            background-color: @hedaerContentNameColor;
+            padding: 10px;
+            min-width: max-content;
+            margin: 10px 0px;
+
+            .header_content_name {
+                margin-bottom: 20px;
+            }
+
+
+
+            .header_content_value {
+                line-height: 1.2;
+                font-size: 40px;
+                text-align: left;
+
+
+
+                .content_value {
+                    height: max-content;
+                }
+            }
+
+            .icon {
+                display: inline-block;
+                font-size: 35px;
+                color: white;
+                width: 35px;
+                height: 35px;
+                padding-bottom: 1em;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        .content_slide_3 {
+            .statistic {
+                padding: 0px;
+                margin: 0px;
+
+                .payment_row {
+                    border-top: 3px solid @hedaerContentNameColor;
+                    padding: 15px;
+
+                    .header {
+                        height: 50px;
+                    }
+
+                    .content {
+                        height: 100px;
+                        font-size: 60px;
+                        text-align: right;
+
+                        svg {
+                            color: @hedaerContentNameColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        .grafic {
+            position: relative;
+            padding: 15px 15px 0px 15px;
+            min-width: max-content;
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                white-space: nowrap;
+                background-color: @colorGrafBack;
+                padding: 15px;
+                border-top: 3px solid @columnGrafColor;
+
+
+                .name_grafic {
+                    width: max-content;
+                }
+
+                .tools {
+                    width: auto;
+                    margin: 15px;
+
+                    .radioType {
+                        transform: scale(1.5);
+                    }
+                }
+            }
+
+            .content {
+                height: 500px;
+                min-width: max-width;
+                background-color: @colorGrafBack;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+
+                .column_graf {
+                    height: 500px;
+                    width: 14.285714%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    min-width: max-content;
+
+                    &:last-child {
+                        .filled {
+                            border: 0px;
+                        }
+
+                        .value {
+                            border: 0px;
+                        }
+                    }
+
+                    .filled {
+                        height: 400px;
+                        background-color: @columnGrafColor;
+                        border-right: @borderColumnGraf;
+                    }
+
+                    #filled1 {
+                        height: 100px;
+                    }
+
+                    #filled2 {
+                        height: 130px;
+                    }
+
+                    #filled3 {
+                        height: 150px;
+                    }
+
+                    .value {
+                        color: white;
+                        background-color: #01d1ff;
+                        text-align: center;
+                        font-size: 35px;
+                        border-right: @borderColumnGraf;
+
+                        &:last-child {
+                            border-right: none;
+                        }
+                    }
+
+                    .date {
+                        text-align: center;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+        .lists {
+            margin-bottom: 15px;
+
+            .items {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+
+
+                .wrap_item {
+                    min-width: 150px;
+                    padding: 10px 0px;
+
+                    .item {
+                        background-color: @itemBackgroundColor;
+                        width: 130px;
+                        height: 300px;
+                        overflow: hidden;
+
+
+                        .mainImage {
+                            display: block;
+                            height: 50%;
+                            width: 100%;
+                        }
+
+                        .content {
+                            position: relative;
+                            min-height: 150px;
+                            padding: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+
+                            .name_dish {
+                                width: 100%;
+                            }
+
+                            .cost_dish {
+                                width: 100%;
+                            }
+
+                            .count_order {
+                                width: 100%;
+                                color: white;
+                                font-size: 20px;
+                            }
+
+
+
+                            .total_cost_order {
+                                width: 100%;
+                                color: white;
+                                font-size: 20px;
+                                height: max-content;
+
+
+                                .icon {
+                                    display: inline-block;
+                                    margin: 0 auto;
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .top_order {
+            border-top: 3px solid @itemBackgroundColor;
+        }
+
+        .unordered {
+            border-top: 3px solid red;
+
+            .items {
+                .wrap_item {
+                    .item {
+                        background-color: @item2BackgroundColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.shape {
+    background: red;
+    width: 100px;
+    height: 100px;
+    shape-outside: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+
+@media (min-width: 1400px) {
+    #slider {
+        overflow-x: hidden;
+    }
+
+    .slider {
+        max-width: 100vw;
+    }
+}
+
+@media (max-width: 1400px) {
+    body {
+        height: 100vh;
+    }
+
+    #slider {
+        width: max-content;
+    }
+
+    .slide {
+        max-width: max-content;
+        height: auto;
+
+        .content_slide {
+            height: 99vh;
+            max-width: max-content;
+            display: block;
+
+            .special_row {
+                display: flex;
+                flex-direction: column;
+                float: left;
+                margin-right: 15px;
+
+                .items {
+
+                    .wrap_item {
+                        margin-right: 15px;
+
+                        .item {
+                            width: 180px;
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

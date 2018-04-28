@@ -1,0 +1,19 @@
+﻿body {
+  background-image: url('../images/example2.png');
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.formSignIn {
+  width: max-content;
+  height: max-content;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 30px;
+  background-color: white;
+}
+.formSignIn .row {
+  margin: 0px;
+}

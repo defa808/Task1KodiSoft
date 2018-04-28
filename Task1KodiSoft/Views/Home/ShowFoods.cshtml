@@ -1,0 +1,56 @@
+﻿@using Task1KodiSoft.ViewModels
+@model FoodViewModel
+
+<div class="row" id="header_slide2">
+    <h2>Food</h2>
+</div>
+<div class="row lists top_order special_row">
+    <h3>Top orders</h3>
+    <div class="items">
+        @foreach (FoodItemViewModel item in Model.TopOrders)
+        {
+            <div class="wrap_item">
+                <div class="item">
+                    <img class="mainImage" src="~/images/@item.OrderItem.Media" />
+                    <div class="content">
+                        <div>
+                            <div class="name_dish"><small>@item.OrderItem.Name</small></div>
+                            <div class="cost_dish"><small>@item.OrderItem.Price</small></div>
+                        </div>
+                        <div class="indeces">
+                            <div class="count_order"><i class="fas fa-tags"></i> @item.TotalCount</div>
+                            <div class="total_cost_order"><img class="icon" src="~/images/dish.svg" /> $@item.TotalAmountSum.ToString(".00")</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<div class="row lists unordered special_row">
+    <h3>Unordered</h3>
+    <div class="items">
+@foreach (FoodItemViewModel item in Model.Unordered)
+        {
+            <div class="wrap_item">
+                <div class="item">
+                    <img class="mainImage" src="~/images/@item.OrderItem.Media" />
+                    <div class="content">
+                        <div>
+                            <div class="name_dish"><small>@item.OrderItem.Name</small></div>
+                            <div class="cost_dish"><small>@item.OrderItem.Price</small></div>
+                        </div>
+                        <div class="indeces">
+                            <div class="count_order"><i class="fas fa-tags"></i>  @item.TotalCount</div>
+                            <div class="total_cost_order"><img class="icon" src="~/images/dish.svg" /> $@item.TotalAmountSum.ToString(".00")</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
