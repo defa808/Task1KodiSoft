@@ -37,6 +37,9 @@ namespace Task1KodiSoft
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +66,13 @@ namespace Task1KodiSoft
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.EnsureCreated();
+            }
+
         }
     }
 }

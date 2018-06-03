@@ -5,6 +5,14 @@
     <UserSecretsId>aspnet-Task1KodiSoft-64867E67-F558-4665-80B1-6525454A2FC9</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\SampleData.cs~RF2aab89c.TMP" />
+  </ItemGroup>
+
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\index.css" />
   </ItemGroup>
